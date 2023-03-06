@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "", //Enter your MySQL password here.
+  password: "08241991", //Enter your MySQL password here.
   database: "employee_db"
 });
 
@@ -31,7 +31,7 @@ function runEmployeeDB() {
     inquirer.prompt([
     {
     type: "list",
-    message: "What would you like to do today?",
+    message: "Select an option.",
     name: "action",
     choices: [
             "View All Employees", 
@@ -46,7 +46,8 @@ function runEmployeeDB() {
             "Exit"
             ]
     }
-]).then(function(answers) {
+])
+.then(function(answers) {
         switch (answers.action) {
 
             // VIEW ALL EMPLOYEES ___________________
